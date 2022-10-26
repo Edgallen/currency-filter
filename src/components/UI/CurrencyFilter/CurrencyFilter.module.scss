@@ -1,0 +1,30 @@
+@import '../../../assets/scss/color-pallette';
+@import '../../../assets/scss/font-sizes';
+
+.currenctyFilter__wrapper {
+  display: flex;
+}
+
+.currencyFilter__button {
+  color: map-get($colors, 'color-font-active');
+  border-radius: 5px;
+  padding: 6px 6px;
+  color: map-get($colors, 'color-font');
+  font-size: map-get($fontSizes, 'text');
+  font-weight: 500;
+  transition: .4s;
+  cursor: pointer;
+}
+
+.currencyFilter__button:hover {
+  color: map-get($colors, 'color-service');
+}
+
+.currencyFilter__button__active {
+  background-color: map-get($colors, 'color-service');
+  color: map-get($colors, 'color-font-active');
+}
+
+.currencyFilter__button__active:hover {
+  color: map-get($colors, 'color-font-active');
+}

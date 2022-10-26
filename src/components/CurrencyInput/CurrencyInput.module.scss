@@ -1,0 +1,51 @@
+@import '../../assets/scss/color-pallette';
+@import '../../assets/scss/font-sizes';
+@import '../../assets/scss/shadows';
+
+.input__wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.input {
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  height: 40px;
+  padding: 0 8px;
+  width: 100%;
+  font-size: map-get($fontSizes, 'input');
+  box-shadow: map-get($shadows, 'shadow-main');
+  border-radius: 2px 0 0 2px;
+
+}
+
+.input:focus {
+  outline: none;
+  border: 1px solid map-get($colors, 'color-service');
+}
+
+.input__select {
+  box-sizing: border-box;
+  border: 1px solid map-get($colors, 'color-border');
+  box-shadow: map-get($shadows, 'shadow-secondary');
+  background-color: transparent;
+  height: 42px;
+  width: 65px;
+  border-radius: 0 2px 2px 0;
+  padding: 0 5px;
+  appearance:none;
+  z-index: 2;
+}
+
+.input__select:focus {
+  outline: none;
+  border: 1px solid map-get($colors, 'color-service');
+}
+
+.input__icon {
+  transform: scale(0.8);
+  right: 0px;
+  position: absolute;
+  z-index: 1;
+}

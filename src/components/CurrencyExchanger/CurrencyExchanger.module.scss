@@ -1,0 +1,25 @@
+@import '../../assets/scss/color-pallette';
+@import '../../assets/scss/font-sizes';
+@import '../../assets/scss/shadows';
+
+.currencyExchanger {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  box-shadow: map-get($shadows, 'shadow-main');
+  border-radius: 4px;
+  width: 500px;
+  padding: 25px 20px;
+  gap: 60px;
+}
+
+.currencyExchanger__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.currencyExchanger__title {
+  font-size: map-get($fontSizes, 'title');
+  color: map-get($colors, 'color-font-service');
+}
