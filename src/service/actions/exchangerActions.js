@@ -7,6 +7,8 @@ import {
   GET_FILTER_FAILED,
   GET_FILTER_REQUEST,
   GET_FILTER_SUCCESS,
+  RESET_TO_CURRENCY,
+  RESET_TO_FILTER_TAB,
   SET_FROM_CURRENCY,
   SET_FROM_FILTER_TAB,
   SET_TO_CURRENCY,
@@ -69,6 +71,18 @@ export const setFromCurrency = (newCurrency) => {
   return {
     type: SET_FROM_CURRENCY,
     payload: newCurrency,
+  };
+};
+
+export const resetToCurrency = () => {
+  return {
+    type: RESET_TO_CURRENCY,
+  };
+};
+
+export const resetToFilter = () => {
+  return {
+    type: RESET_TO_FILTER_TAB,
   };
 };
 

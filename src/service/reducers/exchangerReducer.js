@@ -5,6 +5,8 @@ import {
   GET_FILTER_FAILED,
   GET_FILTER_REQUEST,
   GET_FILTER_SUCCESS,
+  RESET_TO_CURRENCY,
+  RESET_TO_FILTER_TAB,
   SET_FROM_CURRENCY,
   SET_FROM_FILTER_TAB,
   SET_TO_CURRENCY,
@@ -118,6 +120,15 @@ export const exchangerReducer = (state = initialState, action) => {
         },
       };
     }
+    case RESET_TO_FILTER_TAB: {
+      return {
+        ...state,
+        activeFilters: {
+          ...state.activeFilters,
+          to: "Все",
+        },
+      };
+    }
     case SET_FROM_CURRENCY: {
       return {
         ...state,
@@ -133,6 +144,15 @@ export const exchangerReducer = (state = initialState, action) => {
         selectedCurrencies: {
           ...state.selectedCurrencies,
           to: action.payload,
+        },
+      };
+    }
+    case RESET_TO_CURRENCY: {
+      return {
+        ...state,
+        selectedCurrencies: {
+          ...state.selectedCurrencies,
+          to: "-",
         },
       };
     }
