@@ -1,0 +1,13 @@
+@import '../../assets/scss/font-sizes';
+@import '../../assets/scss/color-pallette';
+
+.currencyBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.currencyBlock__title {
+  font-size: map-get($fontSizes, 'title');
+  color: map-get($colors, 'color-font-service');
+}

@@ -1,10 +1,6 @@
 @import '../../../assets/scss/color-pallette';
 @import '../../../assets/scss/font-sizes';
 
-.currenctyFilter__wrapper {
-  display: flex;
-}
-
 .currencyFilter__button {
   color: map-get($colors, 'color-font-active');
   border-radius: 5px;

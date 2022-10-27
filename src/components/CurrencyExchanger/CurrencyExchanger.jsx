@@ -1,37 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import styles from "./CurrencyExchanger.module.scss";
-import CurrencyFilter from "../UI/CurrencyFilter/CurrencyFilter";
-import CurrencyInput from "../CurrencyInput/CurrencyInput";
-import { useSelector } from "react-redux";
+import CurrencyBlock from "../CurrencyBlock/CurrencyBlock";
+import { useDispatch } from "react-redux";
+import {
+  getDirections,
+  getFilter,
+} from "../../service/actions/exchangerActions";
 
 const CurrencyExchanger = () => {
-  const exchangerStore = useSelector((store) => store.exchanger);
-  const [activeFilter, setActiveFilter] = useState("Все");
+  const dispatch = useDispatch();
 
-  const handleFilterChange = (newFilter) => {
-    setActiveFilter(newFilter);
-  };
+  useEffect(() => {
+    dispatch(getDirections());
+    dispatch(getFilter());
+  }, []);
 
   return (
     <div className={styles.currencyExchanger}>
-      <div className={styles.currencyExchanger__wrapper}>
-        <h1 className={styles.currencyExchanger__title}>Отдаёте</h1>
-        <CurrencyFilter
-          filters={exchangerStore.tabFilters}
-          activeFilter={activeFilter}
-          filterChangeCallback={handleFilterChange}
-        />
-        <CurrencyInput />
-      </div>
-      <div className={styles.currencyExchanger__wrapper}>
-        <h1 className={styles.currencyExchanger__title}>Получаете</h1>
-        <CurrencyFilter
-          filters={exchangerStore.tabFilters}
-          activeFilter={activeFilter}
-          filterChangeCallback={handleFilterChange}
-        />
-        <CurrencyInput />
-      </div>
+      <CurrencyBlock title={"Отдаёте"} directionToTrack={"from"} />
+      <CurrencyBlock title={"Получаете"} directionToTrack={"to"} />
     </div>
   );
 };
