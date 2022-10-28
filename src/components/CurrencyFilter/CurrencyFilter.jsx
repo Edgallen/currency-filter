@@ -6,7 +6,7 @@ import {
   setFromFilter,
   setToFilter,
 } from "../../service/actions/exchangerActions";
-import TabButton from "../UI/tabButton/tabButton";
+import TabButton from "../UI/TabButton/TabButton";
 
 const CurrencyFilter = ({ activeFilter, direction }) => {
   const dispatch = useDispatch();
