@@ -1,7 +1,6 @@
 // FilterTabs
 export const SET_FROM_FILTER_TAB = "SET_FROM_FILTER_TAB";
 export const SET_TO_FILTER_TAB = "SET_TO_FILTER_TAB";
-export const RESET_TO_FILTER_TAB = "RESET_TO_FILTER_TAB";
 
 // CurrencySelect
 export const SET_FROM_CURRENCY = "SET_FROM_CURRENCY";

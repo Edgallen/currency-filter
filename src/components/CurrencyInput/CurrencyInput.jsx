@@ -5,7 +5,6 @@ import ArrowSvg from "../../images/arrow-s.svg";
 import { useDispatch, useSelector } from "react-redux";
 import {
   resetToCurrency,
-  resetToFilter,
   setFromCurrency,
   setToCurrency,
   setToFilter,
@@ -25,12 +24,10 @@ const CurrencyInput = ({ directionToTrack }) => {
     setInput(newValue);
   };
 
-  // TODO: Доделать
   const handleSelectChange = (newCurrencie) => {
     if (directionToTrack === "from") {
       dispatch(setFromCurrency(newCurrencie));
       dispatch(resetToCurrency());
-      // dispatch(resetToFilter());
       dispatch(setToFilter("Все"));
     }
     dispatch(setToCurrency(newCurrencie));

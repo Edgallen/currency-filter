@@ -35,7 +35,11 @@ export default function useCurrencyFilter(store, direction) {
       return filterFromBySelectedTab(store, foundFilters.to, "to");
     }
 
-    return store.directions.data;
+    if (store.activeFilters.to === "Все") {
+      return store.directions.data;
+    }
+
+    return filterFromBySelectedTab(store, store.directions.data, "to");
   }, [
     store.selectedCurrencies.from,
     store.selectedCurrencies.to,

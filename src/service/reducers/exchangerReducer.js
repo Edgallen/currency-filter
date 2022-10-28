@@ -6,7 +6,6 @@ import {
   GET_FILTER_REQUEST,
   GET_FILTER_SUCCESS,
   RESET_TO_CURRENCY,
-  RESET_TO_FILTER_TAB,
   SET_FROM_CURRENCY,
   SET_FROM_FILTER_TAB,
   SET_TO_CURRENCY,
@@ -117,15 +116,6 @@ export const exchangerReducer = (state = initialState, action) => {
         activeFilters: {
           ...state.activeFilters,
           to: action.payload,
-        },
-      };
-    }
-    case RESET_TO_FILTER_TAB: {
-      return {
-        ...state,
-        activeFilters: {
-          ...state.activeFilters,
-          to: "Все",
         },
       };
     }
