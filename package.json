@@ -7,7 +7,8 @@
     "start": "webpack-dev-server --mode development --hot --open",
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
-    "format": "prettier --write \"{,!(node_modules)/**/}*.tsx\""
+    "format": "prettier --write \"{,!(node_modules)/**/}*.tsx\"",
+    "build": "webpack --mode production"
   },
   "keywords": [],
   "author": "",
